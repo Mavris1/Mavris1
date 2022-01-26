@@ -3,15 +3,15 @@ from sys import argv
 import cryptography
 from cryptography.fernet import Fernet
 
-key = input('Please input the decryption key:')
+key = input('? :')
 cipher = Fernet(key)
 
-with open('encrypted_Mavris2', 'rb') as df:
+with open('encrypted_Mavris2.txt', 'rb') as df:
     encrypted_data = df.read()
 
 decrypted_file = cipher.decrypt(encrypted_data)
 
-with open('decrypted_12kMP.txt', 'wb') as df:
+with open('decrypted_Mavris2.txt', 'wb') as df:
     df.write(decrypted_file)
 
 x1 = input('Would you like to see the list of contents in your decrypted file?')
